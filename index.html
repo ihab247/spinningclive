@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clive Made Me Cry by Watching A Silent Voice 😭">
+    <title>💫Spinning Clive💫</title>
+    <style>
+        #clive {
+            width: 500px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #counter {
+            text-align: center;
+        }
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+    <script>
+        let degrees = 0;
+        let count = 0;
+        setInterval(function() {
+            degrees += 1;
+            const rotate = document.getElementById("clive");
+            const counter = document.getElementById("counter");
+            rotate.style = `transform: rotate(${degrees}deg);`;
+            if (degrees == 360) {
+                degrees = 0;
+                count += 1;
+                counter.innerText = `CLIVE SPINS: ${count}`
+            }
+        }, 1);
+    </script>
+</head>
+<body>
+    <audio controls autoplay loop>
+        <source src="spin.mp3" type="audio/mp3">
+    </audio>
+    <img src="clive.png" id="clive">
+    <h1 id="counter">CLIVE SPINS: 0</h1>
+</body>
+</html>
